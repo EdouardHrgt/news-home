@@ -5,7 +5,7 @@ const isOpen = ref(false);
 
 <template>
   <div>
-    <header>
+    <header @wheel.prevent @touchmove.prevent @scroll.prevent>
       <nav class="flex-align">
         <svg width="65" height="40" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -53,7 +53,14 @@ const isOpen = ref(false);
         </ul>
       </nav>
     </header>
-    <div class="filter" :class="{ filterOn: isOpen, filterOff: !isOpen }"></div>
+    <div
+      @wheel.prevent
+      @touchmove.prevent
+      @scroll.prevent
+      @click="isOpen = !isOpen"
+      class="filter"
+      :class="{ filterOn: isOpen, filterOff: !isOpen }"
+    ></div>
   </div>
 </template>
 
@@ -62,6 +69,11 @@ header {
   padding-block: var(--size-2);
   padding-inline: var(--inline-padding);
   position: relative;
+}
+
+button svg {
+  opacity: 0;
+  animation: opak 0.4s 0.5s forwards;
 }
 
 .filter {
@@ -93,7 +105,7 @@ li p:hover {
 }
 @media screen and (max-width: 768px) {
   header {
-    padding-block: var(--size-2);
+    padding-block: var(--size-2) 0.5rem;
   }
   ul {
     background: var(--clr-white);

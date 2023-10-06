@@ -46,7 +46,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
-  grid-column-gap: var(--size-2);
+  grid-column-gap: 5rem;
   grid-row-gap: 0px;
   padding-inline: var(--inline-padding);
 }
@@ -61,6 +61,13 @@
   background-color: var(--clr-very-dark-blue);
   padding: 1.5rem;
 }
+.col-1-img {
+  width: 100%;
+}
+.col-1-img img {
+  width: inherit;
+  object-fit: cover;
+}
 .col-1-p-btn {
   display: flex;
   flex-direction: column;
@@ -69,6 +76,7 @@
 .col-1-txt {
   margin-top: var(--size-2);
   justify-content: space-between;
+  width: 100%;
 }
 
 h1 {
@@ -130,7 +138,7 @@ li {
   max-width: 19rem;
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1440px) {
   .grid {
     grid-column-gap: var(--size-3);
   }
@@ -140,7 +148,7 @@ li {
   .grid {
     margin-top: var(--size-2);
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     grid-column-gap: 0px;
     grid-row-gap: 1rem;
   }
@@ -162,7 +170,7 @@ li {
     margin-block: 1.5rem;
   }
   .col-2 {
-    margin-block: 1rem;
+    margin-block: 2rem;
     text-align: center;
   }
   .col-2-p {
@@ -178,6 +186,12 @@ li {
   }
   .web-3-pc {
     display: none;
+  }
+  .col-2 {
+    height: fit-content;
+  }
+  li {
+    padding-block: var(--size-2);
   }
 }
 </style>

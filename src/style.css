@@ -14,10 +14,9 @@
   --size-2: 2rem;
   --size-3: 1rem;
   --size-4: 0.5rem;
-  --max-width: 1440px;
-  --page-padding: 3rem;
-  --inline-padding: 0;
-  --p-size: 0.938rem;
+  --max-width: 100%;
+  --inline-padding: 3rem;
+  --p-size: 1.1rem;
   --weight-1: 800;
   --weight-2: 700;
   --weight-3: 500;
