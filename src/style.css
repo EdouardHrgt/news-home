@@ -130,7 +130,7 @@ body {
 @media screen and (max-width: 1535px) {
   :root {
     --max-width: 100%;
-    --inline-padding: 3rem;
+    --inline-padding: 2rem;
   }
 }
 @media screen and (max-width: 768px) {

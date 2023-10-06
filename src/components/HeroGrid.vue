@@ -4,7 +4,8 @@
   <main class="grid">
     <div class="col-1">
       <div class="col-1-img">
-        <img src="../assets/images/image-web-3-desktop.jpg" alt="web 3 image" />
+        <img src="../assets/images/image-web-3-desktop.jpg" alt="web 3 image" class="web-3-pc" />
+        <img src="../assets/images/image-web-3-mobile.jpg" alt="web 3 image" class="web-3-mobile" />
       </div>
       <div class="col-1-txt flex">
         <h1>The Bright Future of Web 3.0?</h1>
@@ -26,7 +27,7 @@
           <h3>Hydrogen VS Electric Cars</h3>
           <p class="col-2-p">Will hydrogen-fueled cars ever catch up to EVs?</p>
         </li>
-        <li>
+        <li class="li-2">
           <h3>The Downsides of AI Artistry</h3>
           <p class="col-2-p">What are the possible adverse effects of on-demand AI image generation?</p>
         </li>
@@ -49,13 +50,16 @@
   grid-row-gap: 0px;
   padding-inline: var(--inline-padding);
 }
+.web-3-mobile {
+  display: none;
+}
 .col-1 {
   grid-area: 1 / 1 / 2 / 3;
 }
 .col-2 {
   grid-area: 1 / 3 / 2 / 4;
   background-color: var(--clr-very-dark-blue);
-  padding: 1.5rem 1rem;
+  padding: 1.5rem;
 }
 .col-1-p-btn {
   display: flex;
@@ -80,9 +84,15 @@ h2 {
   color: var(--clr-orange);
 }
 h3 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--clr-white);
+  margin-block: 0.8rem;
+  cursor: pointer;
+  transition: color 0.4s ease-in-out;
+}
+h3:hover {
+  color: var(--clr-orange);
 }
 
 p {
@@ -108,5 +118,66 @@ button {
 }
 button:hover {
   background-color: var(--clr-very-dark-blue);
+}
+
+li {
+  padding-block: 1rem var(--size-2);
+}
+.li-2 {
+  border-block: 1px solid var(--clr-dark-grayish-blue);
+}
+.col-2-p {
+  max-width: 19rem;
+}
+
+@media screen and (max-width: 1250px) {
+  .grid {
+    grid-column-gap: var(--size-3);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .grid {
+    margin-top: var(--size-2);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 1rem;
+  }
+  .col-1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .col-2 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .col-1-txt {
+    margin-top: var(--size-2);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .col-1-p {
+    margin-bottom: 0;
+    margin-block: 1.5rem;
+  }
+  .col-2 {
+    margin-block: 1rem;
+    text-align: center;
+  }
+  .col-2-p {
+    max-width: 19rem;
+    margin-inline: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .web-3-mobile {
+    display: block;
+    margin-inline: auto;
+  }
+  .web-3-pc {
+    display: none;
+  }
 }
 </style>
