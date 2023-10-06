@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+:root {
+  --clr-orange: hsl(35, 77%, 62%);
+  --clr-red: hsl(5, 85%, 63%);
+  --clr-off-white: hsl(36, 100%, 99%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-grayish-blue: hsl(233, 8%, 79%);
+  --clr-dark-grayish-blue: hsl(236, 13%, 42%);
+  --clr-very-dark-blue: hsl(240, 100%, 5%);
+  --clr-trans-black: hsla(240, 100%, 5%, 0.6);
+
+  --size-1: 3rem;
+  --size-2: 2rem;
+  --size-3: 1rem;
+  --size-4: 0.5rem;
+  --max-width: 1440px;
+  --page-padding: 3rem;
+  --inline-padding: 0;
+  --p-size: 0.938rem;
+  --weight-1: 800;
+  --weight-2: 700;
+  --weight-3: 500;
+  --weight-4: 400;
+}
+
+/*-- RESETS --*/
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+  font: inherit;
+  background-repeat: no-repeat;
+  font-family: 'Inter', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  display: block;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+body {
+  background-color: var(--clr-white);
+}
+
+/*-- UTILITAY CLASSES --*/
+
+.mx-w {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-align {
+  display: flex;
+  align-items: center;
+}
+
+.active {
+  display: none;
+}
+
+/*-- ANIMATIONS --*/
+@keyframes slideIn {
+  from {
+    transform: translateX(999px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes opak {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes filter-off {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes slideOut {
+  from {
+    display: flex;
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(999px);
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1535px) {
+  :root {
+    --max-width: 100%;
+    --inline-padding: 3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  :root {
+    --inline-padding: 1rem;
+  }
+  .active {
+    display: inline-flex;
+  }
+}
